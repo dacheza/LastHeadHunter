@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HeadHunter</string>
+    <string name="action_settings">Настройки</string>
+    <string name="surname">Фамилия</string>
+    <string name="name">Имя</string>
+    <string name="patronymic">Очество</string>
+    <string name="essay">Почему именно вы подходите на эту работу</string>
+    <string name="form">Анкета</string>
+    <string name="resume">Резюме</string>
+    <string name="email">Контактный e-mail</string>
+    <string name="phone">Контактный телефон</string>
+    <string name="birth">Дата рождения</string>
+    <string name="position">Искомая дожность</string>
+    <string name="salary">Ожидаемая зарплата в руб.</string>
+    <string name="contact_information">Контактная информация:</string>
+    <string name="add_button_info">Добавить ещё одно поле для ввода данных</string>
+    <!--то что ниже для Активити2-->
+    <string name="two">Активити два</string>
+    <string name="sendButtonAnswer">Отправить ответ</string>
+    <string name="phoneNumberActivity2">Телефон:</string>
+    <string name="FIOActivity2">Соискатель:</string>
+    <string name="sendButtonAnswerActivity2">Отправить ответ</string>
+    <string name="titleActivity2">Резюме соискателя</string>
+    <string name="birthdayActivity2">Дата рождения:</string>
+    <string name="sexActivity2">Пол:</string>
+    <string name="positionActivity2">Должность:</string>
+    <string name="payActivity2">Зарплата:</string>
+    <string name="emailActivity2">Эл. почта:</string>
+    <string name="answerActivity2">Написать письмо соискателю</string>
+    <string name="hintForEdAnswerActivity2">Введите текст письма</string>
+    <string name="sendButtonResumeActivity1">Отправить резюме</string>
+
+</resources>

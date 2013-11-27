@@ -1,0 +1,198 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/resume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/name"
+                        android:inputType="textPersonName|textCapWords" />
+
+                    <EditText
+                        android:id="@+id/surname"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/surname"
+                        android:inputType="textPersonName|textCapWords" />
+
+                    <EditText
+                        android:id="@+id/patronymic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/patronymic"
+                        android:inputType="textPersonName|textCapWords" />
+
+                    <EditText
+                        android:id="@+id/birth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/birth"
+                        android:inputType="date"
+                        android:onClick="onClickDialog" />
+
+                    <!-- <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="1" /> -->
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                        	android:id="@+id/email"
+                        	android:layout_width="match_parent"
+                        	android:layout_height="wrap_content"
+                        	android:layout_weight="1"
+                        	android:ems="10"
+                       		android:hint="@string/email"
+                        	android:inputType="textWebEmailAddress"/>
+
+                        <ImageView
+                            android:id="@+id/addEmailButton"
+                            android:contentDescription="@string/add_button_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/add" 
+                            android:onClick= "plusButton" />               
+                            
+                   </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/phone"
+                            android:inputType="phone|numberDecimal" />
+
+                        <ImageView
+                            android:id="@+id/addPhoneButton"
+                            android:contentDescription="@string/add_button_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/add" />
+
+                    </LinearLayout>
+                    
+                    <!-- <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="1" /> -->
+
+                    <EditText
+                        android:id="@+id/position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/position"
+                        android:inputType="textCapWords" />
+
+                    <EditText
+                        android:id="@+id/salary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/salary"
+                        android:freezesText="true"
+                        android:inputType="numberDecimal" />
+
+                    <Button
+                        android:id="@+id/bSendAnswerActivity2"
+                        android:layout_width="192dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:background="#c9c9c9"
+                        android:drawableLeft="@drawable/aeroplan_activity2"
+                        android:onClick="onClickbSendResume"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="41dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/sendButtonResumeActivity1"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+				
+				</LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <EditText
+                        android:id="@+id/essay"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/essay"
+                        android:inputType="textMultiLine" >
+
+                        <requestFocus />
+                    </EditText>
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>
