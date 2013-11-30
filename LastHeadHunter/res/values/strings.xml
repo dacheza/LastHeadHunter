@@ -5,13 +5,13 @@
     <string name="action_settings">Настройки</string>
     <string name="surname">Фамилия</string>
     <string name="name">Имя</string>
-    <string name="patronymic">Очество</string>
+    <string name="patronymic">Отчество</string>
     <string name="essay">Почему именно вы подходите на эту работу</string>
     <string name="form">Анкета</string>
     <string name="resume">Резюме</string>
     <string name="email">Контактный e-mail</string>
     <string name="phone">Контактный телефон</string>
-    <string name="birth">Дата рождения</string>
+    <string name="birth">Дата\nрождения</string>
     <string name="position">Искомая дожность</string>
     <string name="salary">Ожидаемая зарплата в руб.</string>
     <string name="contact_information">Контактная информация:</string>
@@ -31,5 +31,10 @@
     <string name="answerActivity2">Написать письмо соискателю</string>
     <string name="hintForEdAnswerActivity2">Введите текст письма</string>
     <string name="sendButtonResumeActivity1">Отправить резюме</string>
+    <string name="answerText">Ответ работодателя</string>
+    <string-array name="SexValues">
+        <item >Мужской</item>
+        <item >Женский</item>
+    </string-array>
 
 </resources>

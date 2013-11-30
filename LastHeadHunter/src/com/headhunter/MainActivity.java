@@ -1,31 +1,56 @@
 package com.headhunter;
 
-import com.headhunter.R;
+import java.text.Format;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	 int DIALOG_DATE = 1;
-	 int startYear = 2000;
-	 int startMonth = 01;
-	 int startDay = 01;
-	 EditText edName;
-	 EditText edSurname;
-	 EditText edPatronymic;
-	 EditText edDate;
-	 EditText edPosition;
-	 EditText edSalary;
-	  
+
+	private static final String FULL_NAME_KEY = "fullName";
+	private static final String BIRTH_DATE_KEY = "birthDate";
+	private static final String GENDER_KEY = "gender";
+	private static final String POSITION_NAME_KEY = "positionName";
+	private static final String SALARY_KEY = "salary";
+	private static final String PHONE_KEY = "phone";
+	private static final String EMAIL_KEY = "email";
+
+	private static final int REQUESTCODE_RESPONSE = 100;
+	private Bundle responseIntent;
+
+	int DIALOG_DATE = 1;
+	int startYear = 1995;
+	int startMonth = 1;
+	int startDay = 1;
+	EditText edName;
+	EditText edSurname;
+	EditText edPatronymic;
+	TextView edDate;
+	EditText edPosition;
+	EditText edSalary;
+	
+	private Spinner spSexValue;
+	private EditText edPhone;
+	private EditText edEmail;
+    
+	private ImageView btnPlusEmail;
+	private ImageView btnPlusPhone;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +59,18 @@ public class MainActivity extends Activity {
         edName=(EditText)findViewById(R.id.name);
         edSurname=(EditText)findViewById(R.id.surname);
         edPatronymic=(EditText)findViewById(R.id.patronymic);
-        edDate=(EditText)findViewById(R.id.birth);
+        edDate=(TextView)findViewById(R.id.birth);
         edPosition=(EditText)findViewById(R.id.position);
         edSalary=(EditText)findViewById(R.id.salary);
+        edPhone=(EditText)findViewById(R.id.phone);
+        edEmail=(EditText)findViewById(R.id.email);
+        spSexValue=(Spinner)findViewById(R.id.spSexValue);
         
+        // скроем кнопки, покуда не реализовали их обработку
+        btnPlusEmail=(ImageView)findViewById(R.id.addEmailButton);
+        btnPlusPhone=(ImageView)findViewById(R.id.addPhoneButton);
+        btnPlusEmail.setVisibility(ImageView.GONE);
+        btnPlusPhone.setVisibility(ImageView.GONE);
         
         // 1. Щас будут табы!
         // 1.1. фигачим табы
@@ -80,11 +113,10 @@ public class MainActivity extends Activity {
     		 startYear = year;
     		 startMonth = monthOfYear;
     		 startDay = dayOfMonth;
-    		 edDate.setText(startDay + "." + (startMonth+1) + "." + startYear);
+    		 edDate.setText(""+ (String.valueOf(startDay).length() < 2 ? "0"+startDay : startDay)+ "." + ((startMonth+1) < 10 ? "0"+(startMonth+1) : (startMonth+1)) + "." + startYear);
     	 }
       };
      // Конец пикера
-      
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -93,8 +125,49 @@ public class MainActivity extends Activity {
     }
 
     public void onClickbSendResume(View v) {
-		Intent i = new Intent(this, Activity2.class);
-		startActivity(i);
+		Intent intent = new Intent(MainActivity.this,
+				Activity2.class);
+
+		intent.putExtra(FULL_NAME_KEY, edSurname.getText().toString()+" "+edName.getText().toString()+" "+edPatronymic.getText().toString());
+		intent.putExtra(BIRTH_DATE_KEY, edDate.getText().toString());
+		intent.putExtra(GENDER_KEY, spSexValue.getSelectedItem().toString());
+		intent.putExtra(POSITION_NAME_KEY, edPosition.getText().toString());
+		intent.putExtra(SALARY_KEY, edSalary.getText().toString());
+		intent.putExtra(PHONE_KEY, edPhone.getText().toString());
+		intent.putExtra(EMAIL_KEY, edEmail.getText().toString());
+
+		startActivityForResult(intent, REQUESTCODE_RESPONSE);
 	}
     
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent dataIntent) {
+    	// TODO Auto-generated method stub
+    	super.onActivityResult(requestCode, resultCode, dataIntent);
+		if (resultCode == RESULT_OK) {
+			switch (requestCode) {
+			case REQUESTCODE_RESPONSE:
+				responseIntent = dataIntent.getExtras();
+					if (responseIntent.get(Activity2.RESPONSE_TEXT_KEY) != null) {
+						AlertDialog.Builder adb = new AlertDialog.Builder(this)
+						.setTitle(R.string.answerText).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								// TODO Auto-generated method stub
+								dialog.cancel();
+							}
+						})
+						.setMessage(responseIntent.get(Activity2.RESPONSE_TEXT_KEY).toString()).setIcon(R.drawable.ic_launcher);
+						AlertDialog di = adb.create();
+						di.show();
+					}
+			
+				break;
+
+			default:
+				break;
+			}
+		}
+
+    }
 }

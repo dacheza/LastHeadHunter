@@ -17,7 +17,17 @@ public class Activity2 extends Activity {
     /**
      * Called when the activity is first created.
      */
-    TextView tvFIOValueActivity2;
+	public static final String RESPONSE_TEXT_KEY = "answer"; 
+	
+	private static final String FULL_NAME_KEY = "fullName";
+	private static final String BIRTH_DATE_KEY = "birthDate";
+	private static final String GENDER_KEY = "gender";
+	private static final String POSITION_NAME_KEY = "positionName";
+	private static final String SALARY_KEY = "salary";
+	private static final String PHONE_KEY = "phone";
+	private static final String EMAIL_KEY = "email";
+
+	TextView tvFIOValueActivity2;
     TextView tvBirthdayValueActivity2;
     TextView tvSexValueActivity2;
     TextView tvPositionValueActivity2;
@@ -26,7 +36,9 @@ public class Activity2 extends Activity {
     TextView tvEmailValueActivity2;
 
     Button bSendAnswerActivity2;
-
+    private EditText edAnswer;
+    private Bundle resume;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +51,17 @@ public class Activity2 extends Activity {
         tvPayValueActivity2 = (TextView)findViewById(R.id.tvPayValueActivity2);
         tvPhoneNumberValueActivity2 = (TextView)findViewById(R.id.tvPhoneNumberValueActivity2);
         tvEmailValueActivity2= (TextView)findViewById(R.id.tvEmailValueActivity2);
-
-        tvFIOValueActivity2.setText("Иванов Пётр Сидорович");
-        tvBirthdayValueActivity2.setText("09. фев. 1984г.");
-        tvSexValueActivity2.setText("Мужской");
-        tvPositionValueActivity2.setText("Программист ");
-        tvPayValueActivity2.setText("130 000 руб.");
-        tvPhoneNumberValueActivity2.setText("+7 (936) 815 25 11");
-        tvEmailValueActivity2.setText("jdu.otveta@pisem.net");
-
+        
+        resume = getIntent().getExtras();
+        tvFIOValueActivity2.setText(resume.getString(FULL_NAME_KEY));
+        tvBirthdayValueActivity2.setText(resume.getString(BIRTH_DATE_KEY));
+        tvSexValueActivity2.setText(resume.getString(GENDER_KEY));
+        tvPositionValueActivity2.setText(resume.getString(POSITION_NAME_KEY));
+        tvPayValueActivity2.setText(resume.getString(SALARY_KEY));
+        tvPhoneNumberValueActivity2.setText(resume.getString(PHONE_KEY));
+        tvEmailValueActivity2.setText(resume.getString(EMAIL_KEY));
+        
+        edAnswer = (EditText)findViewById(R.id.edAnswerActivity2);
         bSendAnswerActivity2 = (Button)findViewById(R.id.bSendAnswerActivity2);
         // смена шрифта
         TextView tvFIOActivity2 = (TextView) findViewById(R.id.tvFIOActivity2);
@@ -58,6 +72,9 @@ public class Activity2 extends Activity {
 
     public void onClickbSendAnswer(View v) {
         Toast.makeText(this, "Сообщение отправлено", Toast.LENGTH_LONG).show();
+        Intent dataIntent = new Intent();
+        dataIntent.putExtra(RESPONSE_TEXT_KEY, edAnswer.getText().toString());
+        setResult(RESULT_OK, dataIntent);
         finish();
       /*  Intent intent = new Intent(this, ActivityTwo.class);
         startActivity(intent);*/
