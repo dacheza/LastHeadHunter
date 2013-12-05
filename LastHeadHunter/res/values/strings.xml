@@ -6,12 +6,12 @@
     <string name="surname">Фамилия</string>
     <string name="name">Имя</string>
     <string name="patronymic">Отчество</string>
-    <string name="essay">Почему именно вы подходите на эту работу</string>
+    <string name="essay">Очистить поля</string>
     <string name="form">Анкета</string>
     <string name="resume">Резюме</string>
     <string name="email">Контактный e-mail</string>
     <string name="phone">Контактный телефон</string>
-    <string name="birth">Дата\nрождения</string>
+    <string name="birth">BirthDate</string>
     <string name="position">Искомая дожность</string>
     <string name="salary">Ожидаемая зарплата в руб.</string>
     <string name="contact_information">Контактная информация:</string>
@@ -36,5 +36,6 @@
         <item >Мужской</item>
         <item >Женский</item>
     </string-array>
+    <string name="clear">Очистить поля</string>
 
 </resources>

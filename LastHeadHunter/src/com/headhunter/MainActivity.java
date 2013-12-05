@@ -43,6 +43,7 @@ public class MainActivity extends Activity {
 	TextView edDate;
 	EditText edPosition;
 	EditText edSalary;
+	Button btnClearFields;
 	
 	private Spinner spSexValue;
 	private EditText edPhone;
@@ -65,6 +66,7 @@ public class MainActivity extends Activity {
         edPhone=(EditText)findViewById(R.id.phone);
         edEmail=(EditText)findViewById(R.id.email);
         spSexValue=(Spinner)findViewById(R.id.spSexValue);
+        btnClearFields=(Button)findViewById(R.id.bClearFields);
         
         // скроем кнопки, покуда не реализовали их обработку
         btnPlusEmail=(ImageView)findViewById(R.id.addEmailButton);
@@ -83,6 +85,7 @@ public class MainActivity extends Activity {
         tabSpec.setIndicator("Анкета");
         tabSpec.setContent(R.id.resume);
         tabHost.addTab(tabSpec);
+        tabHost.setCurrentTabByTag("formTag");
         
         // 1.1.2. вторая вкладка
         tabSpec = tabHost.newTabSpec("resumeTag");
@@ -90,8 +93,6 @@ public class MainActivity extends Activity {
         tabSpec.setContent(R.id.answer);
         tabHost.addTab(tabSpec);
         
-        // 1.2 первая вкладка ставится по умолчанию
-        tabHost.setCurrentTabByTag("formTag");
     }  
 
     
@@ -117,27 +118,43 @@ public class MainActivity extends Activity {
     	 }
       };
      // Конец пикера
+      
+      
+    public void onClick(View v) {
+    	    switch (v.getId()) {
+    	    case R.id.bClearFields:
+    	    	edName.getEditableText().clear();
+    	    	edSurname.getEditableText().clear();
+    	    	edPatronymic.getEditableText().clear();
+    	    	edDate.getEditableText().clear();
+    	    	edPosition.getEditableText().clear();
+    	    	edSalary.getEditableText().clear();
+    	    	edPhone.getEditableText().clear();
+    	    	edEmail.getEditableText().clear();
+    	    	// нужно ещё скинуть спиннер
+    	      break;
+    	    case R.id.bSendAnswerActivity2:
+    	    	Intent intent = new Intent(MainActivity.this,Activity2.class);
+
+    			intent.putExtra(FULL_NAME_KEY, edSurname.getText().toString()+" "+edName.getText().toString()+" "+edPatronymic.getText().toString());
+    			intent.putExtra(BIRTH_DATE_KEY, edDate.getText().toString());
+    			intent.putExtra(GENDER_KEY, spSexValue.getSelectedItem().toString());
+    			intent.putExtra(POSITION_NAME_KEY, edPosition.getText().toString());
+    			intent.putExtra(SALARY_KEY, edSalary.getText().toString());
+    			intent.putExtra(PHONE_KEY, edPhone.getText().toString());
+    			intent.putExtra(EMAIL_KEY, edEmail.getText().toString());
+
+    			startActivityForResult(intent, REQUESTCODE_RESPONSE);   
+    			break;
+    	    }
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
-    public void onClickbSendResume(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				Activity2.class);
-
-		intent.putExtra(FULL_NAME_KEY, edSurname.getText().toString()+" "+edName.getText().toString()+" "+edPatronymic.getText().toString());
-		intent.putExtra(BIRTH_DATE_KEY, edDate.getText().toString());
-		intent.putExtra(GENDER_KEY, spSexValue.getSelectedItem().toString());
-		intent.putExtra(POSITION_NAME_KEY, edPosition.getText().toString());
-		intent.putExtra(SALARY_KEY, edSalary.getText().toString());
-		intent.putExtra(PHONE_KEY, edPhone.getText().toString());
-		intent.putExtra(EMAIL_KEY, edEmail.getText().toString());
-
-		startActivityForResult(intent, REQUESTCODE_RESPONSE);
-	}
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent dataIntent) {

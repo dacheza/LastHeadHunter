@@ -8,6 +8,9 @@
 package com.headhunter;
 
 public final class R {
+    public static final class array {
+        public static final int SexValues=0x7f060000;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -28,43 +31,47 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f080024;
-        public static final int addEmailButton=0x7f08001d;
-        public static final int addPhoneButton=0x7f08001f;
-        public static final int answer=0x7f080022;
-        public static final int bSendAnswerActivity2=0x7f080013;
-        public static final int birth=0x7f08001b;
-        public static final int edAnswerActivity2=0x7f080014;
-        public static final int email=0x7f08001c;
-        public static final int essay=0x7f080023;
-        public static final int ivBigFace=0x7f080016;
-        public static final int ivBigFaceLayout=0x7f080015;
-        public static final int ivLittleFace=0x7f08000d;
-        public static final int linLayoutInRel=0x7f080005;
-        public static final int linLayoutInRel2=0x7f080008;
-        public static final int name=0x7f080018;
-        public static final int patronymic=0x7f08001a;
-        public static final int phone=0x7f08001e;
-        public static final int position=0x7f080020;
-        public static final int resume=0x7f080017;
-        public static final int salary=0x7f080021;
-        public static final int surname=0x7f080019;
-        public static final int tvAnswerActivity2=0x7f080012;
-        public static final int tvBirthdayActivity2=0x7f080003;
-        public static final int tvBirthdayValueActivity2=0x7f080004;
-        public static final int tvEmailActivity2=0x7f080010;
-        public static final int tvEmailValueActivity2=0x7f080011;
-        public static final int tvFIOActivity2=0x7f080001;
-        public static final int tvFIOValueActivity2=0x7f080002;
-        public static final int tvPayActivity2=0x7f08000b;
-        public static final int tvPayValueActivity2=0x7f08000c;
-        public static final int tvPhoneNumberActivity2=0x7f08000e;
-        public static final int tvPhoneNumberValueActivity2=0x7f08000f;
-        public static final int tvPositionActivity2=0x7f080009;
-        public static final int tvPositionValueActivity2=0x7f08000a;
-        public static final int tvSexActivity2=0x7f080006;
-        public static final int tvSexValueActivity2=0x7f080007;
-        public static final int tvTitleActivity2=0x7f080000;
+        public static final int action_settings=0x7f090028;
+        public static final int addEmailButton=0x7f09001f;
+        public static final int addPhoneButton=0x7f090021;
+        public static final int answer=0x7f090025;
+        public static final int answersList=0x7f090026;
+        public static final int bClearFields=0x7f090024;
+        public static final int bSendAnswerActivity2=0x7f090013;
+        public static final int birth=0x7f09001c;
+        public static final int edAnswerActivity2=0x7f090014;
+        public static final int email=0x7f09001e;
+        public static final int essay=0x7f090027;
+        public static final int ivBigFace=0x7f090016;
+        public static final int ivBigFaceLayout=0x7f090015;
+        public static final int ivLittleFace=0x7f09000d;
+        public static final int ivPhoto=0x7f09001a;
+        public static final int linLayoutInRel=0x7f090005;
+        public static final int linLayoutInRel2=0x7f090008;
+        public static final int name=0x7f090018;
+        public static final int patronymic=0x7f09001b;
+        public static final int phone=0x7f090020;
+        public static final int position=0x7f090022;
+        public static final int resume=0x7f090017;
+        public static final int salary=0x7f090023;
+        public static final int spSexValue=0x7f09001d;
+        public static final int surname=0x7f090019;
+        public static final int tvAnswerActivity2=0x7f090012;
+        public static final int tvBirthdayActivity2=0x7f090003;
+        public static final int tvBirthdayValueActivity2=0x7f090004;
+        public static final int tvEmailActivity2=0x7f090010;
+        public static final int tvEmailValueActivity2=0x7f090011;
+        public static final int tvFIOActivity2=0x7f090001;
+        public static final int tvFIOValueActivity2=0x7f090002;
+        public static final int tvPayActivity2=0x7f09000b;
+        public static final int tvPayValueActivity2=0x7f09000c;
+        public static final int tvPhoneNumberActivity2=0x7f09000e;
+        public static final int tvPhoneNumberValueActivity2=0x7f09000f;
+        public static final int tvPositionActivity2=0x7f090009;
+        public static final int tvPositionValueActivity2=0x7f09000a;
+        public static final int tvSexActivity2=0x7f090006;
+        public static final int tvSexValueActivity2=0x7f090007;
+        public static final int tvTitleActivity2=0x7f090000;
     }
     public static final class layout {
         public static final int activity2=0x7f030000;
@@ -72,16 +79,18 @@ public final class R {
         public static final int activity_main=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
     }
     public static final class string {
         public static final int FIOActivity2=0x7f050012;
         public static final int action_settings=0x7f050001;
         public static final int add_button_info=0x7f05000e;
         public static final int answerActivity2=0x7f05001a;
+        public static final int answerText=0x7f05001d;
         public static final int app_name=0x7f050000;
         public static final int birth=0x7f05000a;
         public static final int birthdayActivity2=0x7f050015;
+        public static final int clear=0x7f05001e;
         public static final int contact_information=0x7f05000d;
         public static final int email=0x7f050008;
         public static final int emailActivity2=0x7f050019;
@@ -129,10 +138,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }
