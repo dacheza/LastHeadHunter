@@ -31,7 +31,7 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f090028;
+        public static final int action_settings=0x7f09002c;
         public static final int addEmailButton=0x7f09001f;
         public static final int addPhoneButton=0x7f090021;
         public static final int answer=0x7f090025;
@@ -39,9 +39,13 @@ public final class R {
         public static final int bClearFields=0x7f090024;
         public static final int bSendAnswerActivity2=0x7f090013;
         public static final int birth=0x7f09001c;
+        public static final int btCandidate=0x7f09002a;
+        public static final int btEmployer=0x7f09002b;
         public static final int edAnswerActivity2=0x7f090014;
         public static final int email=0x7f09001e;
         public static final int essay=0x7f090027;
+        public static final int hello_screen_desc=0x7f090029;
+        public static final int hello_screen_topic=0x7f090028;
         public static final int ivBigFace=0x7f090016;
         public static final int ivBigFaceLayout=0x7f090015;
         public static final int ivLittleFace=0x7f09000d;
@@ -77,44 +81,53 @@ public final class R {
         public static final int activity2=0x7f030000;
         public static final int activity2_big_face=0x7f030001;
         public static final int activity_main=0x7f030002;
+        public static final int hello_screen=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int FIOActivity2=0x7f050012;
+        public static final int FIOActivity2=0x7f050016;
         public static final int action_settings=0x7f050001;
-        public static final int add_button_info=0x7f05000e;
-        public static final int answerActivity2=0x7f05001a;
-        public static final int answerText=0x7f05001d;
+        public static final int add_button_info=0x7f050012;
+        public static final int answerActivity2=0x7f05001e;
+        public static final int answerText=0x7f050021;
         public static final int app_name=0x7f050000;
-        public static final int birth=0x7f05000a;
-        public static final int birthdayActivity2=0x7f050015;
-        public static final int clear=0x7f05001e;
-        public static final int contact_information=0x7f05000d;
-        public static final int email=0x7f050008;
-        public static final int emailActivity2=0x7f050019;
-        public static final int essay=0x7f050005;
-        public static final int form=0x7f050006;
-        public static final int hintForEdAnswerActivity2=0x7f05001b;
-        public static final int name=0x7f050003;
-        public static final int patronymic=0x7f050004;
-        public static final int payActivity2=0x7f050018;
-        public static final int phone=0x7f050009;
-        public static final int phoneNumberActivity2=0x7f050011;
-        public static final int position=0x7f05000b;
-        public static final int positionActivity2=0x7f050017;
-        public static final int resume=0x7f050007;
-        public static final int salary=0x7f05000c;
-        public static final int sendButtonAnswer=0x7f050010;
-        public static final int sendButtonAnswerActivity2=0x7f050013;
-        public static final int sendButtonResumeActivity1=0x7f05001c;
-        public static final int sexActivity2=0x7f050016;
-        public static final int surname=0x7f050002;
-        public static final int titleActivity2=0x7f050014;
-        /** то что ниже для Активити2
+        public static final int birth=0x7f05000e;
+        public static final int birthdayActivity2=0x7f050019;
+        public static final int candidate=0x7f050004;
+        public static final int clear=0x7f050022;
+        public static final int contact_information=0x7f050011;
+        public static final int email=0x7f05000c;
+        public static final int emailActivity2=0x7f05001d;
+        public static final int employer=0x7f050005;
+        public static final int essay=0x7f050009;
+        public static final int form=0x7f05000a;
+        public static final int hello_screen_desc=0x7f050003;
+        /** то что ниже для HelloScreen
          */
-        public static final int two=0x7f05000f;
+        public static final int hello_screen_topic=0x7f050002;
+        public static final int hintForEdAnswerActivity2=0x7f05001f;
+        public static final int name=0x7f050007;
+        public static final int patronymic=0x7f050008;
+        public static final int payActivity2=0x7f05001c;
+        public static final int phone=0x7f05000d;
+        public static final int phoneNumberActivity2=0x7f050015;
+        public static final int position=0x7f05000f;
+        public static final int positionActivity2=0x7f05001b;
+        public static final int resume=0x7f05000b;
+        public static final int salary=0x7f050010;
+        public static final int sendButtonAnswer=0x7f050014;
+        public static final int sendButtonAnswerActivity2=0x7f050017;
+        public static final int sendButtonResumeActivity1=0x7f050020;
+        public static final int sexActivity2=0x7f05001a;
+        /** то что ниже для Candidate
+         */
+        public static final int surname=0x7f050006;
+        public static final int titleActivity2=0x7f050018;
+        /** то что ниже для Employer
+         */
+        public static final int two=0x7f050013;
     }
     public static final class style {
         /** 

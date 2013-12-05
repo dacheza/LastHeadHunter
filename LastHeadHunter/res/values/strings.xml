@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">HeadHunter</string>
     <string name="action_settings">Настройки</string>
+    
+    <!--то что ниже для HelloScreen-->
+    <string name="hello_screen_topic">Выберите желаемый тип аккаунта</string>
+    <string name="hello_screen_desc">Вы можете выбрать одно из двух - либо стать соискателем, либо приступить к поиску кадров
+         в роли работодателя./n<b>Соискатель</b> должен заполнить свой профиль, указав все необходимые данные и ожидать 
+         оповещения о возможных вариантах работы.\n<b>Работодателю</b> даётся возможность просмотра всех кандидатов, после выбора подходящего, Вы
+         можете связаться с ним по email либо позвонить по телефону.
+         </string>
+    <string name="candidate">Соискатель</string>
+    <string name="employer">Работодатель</string>
+    
+    
+	<!--то что ниже для Candidate-->
     <string name="surname">Фамилия</string>
     <string name="name">Имя</string>
     <string name="patronymic">Отчество</string>
@@ -16,7 +28,8 @@
     <string name="salary">Ожидаемая зарплата в руб.</string>
     <string name="contact_information">Контактная информация:</string>
     <string name="add_button_info">Добавить ещё одно поле для ввода данных</string>
-    <!--то что ниже для Активити2-->
+    
+    <!--то что ниже для Employer-->
     <string name="two">Активити два</string>
     <string name="sendButtonAnswer">Отправить ответ</string>
     <string name="phoneNumberActivity2">Телефон:</string>

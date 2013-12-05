@@ -15,12 +15,27 @@
         android:theme="@style/AppTheme" >
         
        <activity
-            android:name="com.headhunter.Activity2"
-            android:label="Activity2" >
-            
-        </activity>
+            android:name="com.headhunter.CandidateMainActivity"
+            android:label="CandidateMainActivity" >
+       </activity>
+       
+       <activity
+            android:name="com.headhunter.CandidateAnswers"
+            android:label="CandidateAnswers" >
+       </activity>
+       
         <activity
-            android:name="com.headhunter.MainActivity"
+            android:name="com.headhunter.EmployerMainActivity"
+            android:label="EmployerMainActivity" >
+        </activity>>
+            
+        <activity
+            android:name="com.headhunter.EmployerList"
+            android:label="EmployerList" >
+        </activity>>
+        
+        <activity
+            android:name="com.headhunter.HelloScreen"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
