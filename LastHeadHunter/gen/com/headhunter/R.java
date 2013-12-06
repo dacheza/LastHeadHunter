@@ -49,12 +49,12 @@ public final class R {
         public static final int ivBigFace=0x7f090016;
         public static final int ivBigFaceLayout=0x7f090015;
         public static final int ivLittleFace=0x7f09000d;
-        public static final int ivPhoto=0x7f09001a;
         public static final int linLayoutInRel=0x7f090005;
         public static final int linLayoutInRel2=0x7f090008;
         public static final int name=0x7f090018;
         public static final int patronymic=0x7f09001b;
         public static final int phone=0x7f090020;
+        public static final int photo=0x7f09001a;
         public static final int position=0x7f090022;
         public static final int resume=0x7f090017;
         public static final int salary=0x7f090023;
@@ -104,7 +104,8 @@ public final class R {
         public static final int essay=0x7f050009;
         public static final int form=0x7f05000a;
         public static final int hello_screen_desc=0x7f050003;
-        /** то что ниже для HelloScreen
+        /** важный комментарий для Коммита
+то что ниже для HelloScreen
          */
         public static final int hello_screen_topic=0x7f050002;
         public static final int hintForEdAnswerActivity2=0x7f05001f;

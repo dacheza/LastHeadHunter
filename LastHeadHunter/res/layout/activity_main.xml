@@ -79,9 +79,10 @@
                             android:contentDescription="TODO" >
 
                             <ImageView
-                                android:id="@+id/ivPhoto"
+                                android:id="@+id/photo"
                                 android:layout_width="100dp"
                                 android:layout_height="match_parent"
+                                android:onClick="onClick"
                                 android:src="@drawable/face_activity2" />
                         </FrameLayout>
                     </LinearLayout>

@@ -9,7 +9,7 @@ public class Camera extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		ImageView ivPhoto = (ImageView) findViewById(R.id.ivPhoto);
+		ImageView ivPhoto = (ImageView) findViewById(R.id.photo);
 		
 	}
 

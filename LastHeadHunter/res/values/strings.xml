@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">HeadHunter</string>
     <string name="action_settings">Настройки</string>
-    
+    <!--важный комментарий для Коммита-->
     <!--то что ниже для HelloScreen-->
     <string name="hello_screen_topic">Выберите желаемый тип аккаунта</string>
     <string name="hello_screen_desc">Вы можете выбрать одно из двух - либо стать соискателем, либо приступить к поиску кадров

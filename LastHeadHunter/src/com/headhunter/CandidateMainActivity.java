@@ -1,8 +1,12 @@
 package com.headhunter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.Format;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore.Images.Media;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -10,6 +14,7 @@ import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -52,6 +57,9 @@ public class CandidateMainActivity extends Activity {
 	private ImageView btnPlusEmail;
 	private ImageView btnPlusPhone;
 	
+	ImageView ivPhoto;
+	static final int GALLERY_REQUEST = 1;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +81,8 @@ public class CandidateMainActivity extends Activity {
         btnPlusPhone=(ImageView)findViewById(R.id.addPhoneButton);
         btnPlusEmail.setVisibility(ImageView.GONE);
         btnPlusPhone.setVisibility(ImageView.GONE);
+        
+        ivPhoto=(ImageView)findViewById(R.id.photo);
         
         // 1. Щас будут табы!
         // 1.1. фигачим табы
@@ -146,6 +156,10 @@ public class CandidateMainActivity extends Activity {
 
     			startActivityForResult(intent, REQUESTCODE_RESPONSE);   
     			break;
+    	    case R.id.photo:
+    	    	Intent photoPiker = new Intent(Intent.ACTION_PICK);
+    	    	photoPiker.setType("image/*");
+    	    	startActivityForResult(photoPiker, GALLERY_REQUEST);
     	    }
     }
     
@@ -158,8 +172,9 @@ public class CandidateMainActivity extends Activity {
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent dataIntent) {
-    	// TODO Auto-generated method stub
     	super.onActivityResult(requestCode, resultCode, dataIntent);
+    	
+    	Bitmap galpic = null;
 		if (resultCode == RESULT_OK) {
 			switch (requestCode) {
 			case REQUESTCODE_RESPONSE:
@@ -180,6 +195,11 @@ public class CandidateMainActivity extends Activity {
 					}
 			
 				break;
+			case GALLERY_REQUEST:
+				if(resultCode == RESULT_OK){  
+					Uri selectedImage = dataIntent.getData();
+					ivPhoto.setImageURI(selectedImage);
+		        }
 
 			default:
 				break;
